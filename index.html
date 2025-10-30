@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV Multi</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <meta http-equiv="refresh" content="1800">
+  <script defer src="assets/script/noticia.js"></script>
+  <script defer src="assets/script/video.js"></script>
+  <script defer src="assets/script/aniversariantes.js"></script>
+  <script defer src="assets/script/fuso-horario.js"></script>
+  <script defer src="assets/script/tempo.js"></script>
+  <script defer src="assets/script/func_mes.js"></script>
+  <script async src="https://app2.weatherwidget.org/js/?id=ww_f0337094d03f8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <div class="grid-container">
+      <section class="not_interna">
+
+      </section>
+      <section class="video">
+        <video id="video-player" controls autoplay muted>
+          <source id="video-source" type="video/mp4">
+          Seu navegador não suporta a reprodução de vídeo.
+        </video>
+      </section>
+      <section class="aniversariante">
+        <canvas id="confetti-canvas"></canvas> 
+        
+        <div class="present-card">
+          <img id="img" class="img_aniversariante">
+          <span class="icone-presente">
+            <i class="fas fa-gift"></i>
+          </span>
+        </div>
+        <div class="cont_aniversariante">
+          <h1 id="titulo"></h1>
+          <h2 id="nome"></h2>
+          <p id="desc"></p>
+          <p id="setor"></p>
+        </div>
+      </section>
+      <section class="func_mes" id="func_mes">
+        <div class="card-func-mes">
+          <h1 id="func-titulo">Funcionário do Mês</h1>
+          <img id="func-foto" class="foto-func-mes" alt="Foto do Funcionário">
+          <div class="func-dados">
+              <h2 id="func-nome"></h2>
+              <p id="func-cargo"></p>
+          </div>
+        </div>
+      </section>
+      <section class="hora_mundial">
+        <h1>Horários</h1>
+        <div class="fuso">
+          <p>Brasília:</p>
+          <span id="brasilia-time"></span>
+        </div>
+        <div class="fuso">
+          <p>Nova York:</p>
+          <span id="newyork-time"></span>
+        </div>
+        <div class="fuso">
+          <p>Hong Kong:</p>
+          <span id="hongkong-time"></span>
+        </div>
+      </section>
+      <section class="prev_tempo" id="clima-container">
+        <div id="clima-atual">Carregando dados do clima...</div>
+        <div id="previsao-dias"></div>
+      </section>
+    </div>
+  </body>
+</html>

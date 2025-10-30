@@ -1,0 +1,281 @@
+:root {
+  --main-color: #ffffff; 
+  --card-color: rgba(0, 0, 0, 0.5);
+}
+
+body, html {
+  height: 100%;
+  color: var(--main-color);
+  background: url(../../images/fundo/fun01.jpg) no-repeat center center / cover;
+}
+
+.grid-container > section {
+  background-color: var(--card-color);
+}
+
+/* noticias */
+.not_interna img {
+  border-radius: .8rem;
+}
+
+/* noticias - adionada por JS */
+.news-item {
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-inline: 2rem;
+  flex-direction: column;
+}
+
+.news-item-img {
+  width: 100%;
+  height: auto; /* permite ajustar conforme o conteúdo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-item-img img {
+  width: 50%;              /* imagem um pouco maior, mas ainda com margem */
+  height: auto;            /* mantém proporção */
+  max-height: 26rem;       /* aumente se quiser mais destaque (antes era 20rem) */
+  object-fit: cover;       /* garante que a imagem preencha bem o espaço */
+  border-radius: 0.8rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.news-item-img img:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+
+.news-item h2 {
+  font-size: 1.8rem;
+  color: #FFFFFF;
+}
+
+.news-item p {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+
+/* video */
+.video video {
+  width: 100%;
+  height: 100%;
+}
+
+/* aniversariante */
+.aniversariante {
+  text-align: center;
+  justify-content: space-around;
+}
+
+.img_aniversariante {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cont_aniversariante {
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cont_aniversariante h1{
+  color: #FFFFFF;
+}
+
+.present-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon_aniversariante {
+  width: 10rem;
+  margin: auto;
+}
+
+/* --- NOVO: Funcionario do Mes (Substitui .dollar_hoje) --- */
+.func_mes {
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card-func-mes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.func_mes h1 { /* Título "Funcionário do Mês" */
+  color: #FFFFFF;
+  font-size: 2.5rem;
+}
+
+.foto-func-mes {
+  width: 7rem; 
+  height: 7rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+}
+
+.func-dados h2 {
+  font-size: 1.8rem;
+  margin-top: 0.2rem;
+}
+
+.func-dados p {
+  font-size: 1.4rem;
+  color: #c0c0c0;
+}
+/* -------------------------------------------------------- */
+
+/* fuso horario */
+.hora_mundial {
+  height: 100%;
+  text-align: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hora_mundial h1{
+  color: #FFFFFF;
+}
+
+.hora_mundial p {
+  font-size: 1.6rem;
+  color:#5a89c7;
+}
+
+#brasilia-time,
+#newyork-time,
+#hongkong-time {
+  font-family: 'Dosis', sans-serif;
+  font-size: 2.4rem;
+}
+
+/* clima */
+.prev_tempo {
+  display: grid;
+  place-content: center;
+}
+
+.widget_weather {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+/* --- Posicionamento do Ícone de Presente (Aniversariante) --- */
+
+.aniversariante .present-card {
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+
+.aniversariante .icone-presente {
+    position: absolute;
+    bottom: 10px; /* Distância da parte inferior */
+    right: 10px; /* Distância da parte direita */
+    
+    font-size: 2.5em;       
+    color: #ee0d0d;         
+    background-color: rgba(0, 0, 0, 0.397); 
+    padding: 8px;
+    border-radius: 50%;     
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    z-index: 10;            
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em; 
+    height: 1.5em;
+  }
+
+/*Confetes */
+#confetti-canvas {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 5; 
+}
+
+.aniversariante {
+    position: relative;
+}
+
+/* ============================================================= */
+/* --- RESPONSIVIDADE TV (HD, FULL HD, 4K) --- */
+
+/* --- 1. HD e TELAS LARGAS (A partir de 1281px) --- */
+@media (min-width: 1281px) {
+    /* Geral: Ajusta o padding e gap */
+    .grid-container {
+        gap: 1.2rem;
+        padding: 2.5rem;
+    }
+
+    /* Aumenta a foto do funcionário do mês para destaque */
+    .foto-func-mes {
+        width: 8rem; 
+        height: 8rem;
+    }
+}
+
+/* --- 2. FULL HD (A partir de 1920px) --- */
+@media (min-width: 1920px) {
+    /* CHAVE: Define o escalonamento da fonte base para Full HD e acima */
+    :root {
+        font-size: 0.8vw; /* 1rem será 0.8% da largura da tela */
+    }
+
+    /* Ajuste fino da foto do Func. do Mês */
+    .foto-func-mes {
+        width: 10rem; 
+        height: 10rem;
+        border-width: 0.5rem;
+    }
+    
+    /* Aumenta o gap do grid */
+    .grid-container {
+        gap: 1.5rem; 
+        padding: 3rem;
+    }
+}
+
+
+/* --- 3. 4K (A partir de 3840px) --- */
+@media (min-width: 3840px) {
+    /* CHAVE: Aumenta o escalonamento para 4K e acima */
+    :root {
+        font-size: 0.6vw; /* 1rem será 0.6% da largura da tela */
+    }
+
+    /* Ajuste fino da foto do Func. do Mês */
+    .foto-func-mes {
+        width: 12rem; 
+        height: 12rem;
+    }
+
+    /* Ajuste específico para os relógios (se necessário um boost extra) */
+    #brasilia-time,
+    #newyork-time,
+    #hongkong-time {
+        font-size: 4rem; 
+    }
+}
